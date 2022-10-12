@@ -1,9 +1,15 @@
+from typing import List
 
-    while indexo >= 0 and key < array[indexo]:
-      array[indexo + 1] =  array[indexo]
-      indexo -= 1
-    array[indexo + 1] = key
-  return array
+def insertionSort(array) -> List[int]:
+  # Write your code here
+  for i in range(1, len(array)):
+        k = array[i]
+        j = i-1
+        while j >= 0 and k < array[j] :
+                array[j + 1] = array[j]
+                j -= 1
+        array[j + 1] = k
+  return array  
 
 # data = [9, 5, 1, 4, 3]
 input_data = input()
@@ -14,4 +20,3 @@ for item in input_data.split(', '):
   elif item.lstrip("-").isnumeric():
     data.append(int(item))
 print(insertionSort(data))
-a
